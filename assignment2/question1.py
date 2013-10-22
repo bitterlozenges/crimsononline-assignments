@@ -87,7 +87,7 @@ class Picture(Content):
             Img.open(self.image_file).show()
 
 
-    pass
+ 
 
 '''
 Question 1e
@@ -104,7 +104,7 @@ def from_url(c_lst, url):
 
     year = None
 
-    Slug = None
+    slug = None
 
     match = re.search(pattern, url)
 
@@ -118,7 +118,7 @@ def from_url(c_lst, url):
 
         day = int(match.groups()[3])
 
-        Slug = match.groups()[4]
+        slug = match.groups()[4]
 
         sl = Slug.split('-')
 
@@ -126,8 +126,8 @@ def from_url(c_lst, url):
 
         for (s in sl):
 
-            Slug = Slug + s + ' '
-        Slug = Slug[:a.__len__()-1]  #here the slug is equal to a title
+            slug = slug + s + ' '
+        slug = slug[:a.__len__()-1]  #here the slug is equal to a title
 
 
     for (c in c_list):
