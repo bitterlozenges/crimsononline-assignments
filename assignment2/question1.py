@@ -1,3 +1,4 @@
+
 import json
 
 import os
@@ -5,7 +6,6 @@ import os
 from datetime import datetime
 
 from PIL import Image
-
 
 
 class Content(object):
@@ -41,7 +41,6 @@ class Content(object):
         return re.search(pattern, url)
 
 
-
 class Article(Content):
     '''
     Required properties:
@@ -65,7 +64,7 @@ class Article(Content):
 
             self.related_image.show()
 
-    
+  
 
 class Picture(Content):
     '''
@@ -75,6 +74,7 @@ class Picture(Content):
     Required methods:
         - All methods of Content
     '''
+
     def __init__(self,title, subtitle, creator, publication_date, image_file):
 
         super(Picture, self).__init__()
@@ -87,12 +87,13 @@ class Picture(Content):
             Img.open(self.image_file).show()
 
 
- 
+
 
 '''
 Question 1e
 '''
 def from_url(c_lst, url):
+
 
     pattern = r'http://thecrimson.com/(\w+)/(\d{4})/(\d{1,2})/(\d{1,2})/([\w-]+)/'
 
@@ -140,10 +141,10 @@ def from_url(c_lst, url):
 
         return None
         
-    
-
+ 
 '''
 Question 1e
 '''
 def posted_after(c_lst, dt):
+
     return {c for c in c_list if c > dt}
